@@ -1,0 +1,385 @@
+/* --------- Global --------- */
+:root {
+  --bg: #fdfdfd;
+  --card: #fff;
+  --text: #333;
+  --muted: #666;
+  --accent: linear-gradient(90deg,#7b61ff,#00c2ff);
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  margin-bottom: 1rem;
+}
+
+a { text-decoration: none; }
+
+/* --------- Navbar --------- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: var(--card);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: var(--accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  color: var(--text);
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #7b61ff;
+  transform: scale(1.1);
+}
+
+.btn-nav {
+  background: var(--accent);
+  color: #fff !important;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+}
+
+/* --------- Profile Image --------- */
+#profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.profile-container {
+  width: 250px; /* square width */
+  height: 250px; /* square height */
+  overflow: hidden;
+  border-radius: 12px; /* slightly rounded corners */
+  border: 2px solid #7b61ff;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.profile-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* ensures image fills the square without distortion */
+  display: block;
+}
+
+/* --------- Hero --------- */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4rem 2rem;
+  flex-wrap: wrap;
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.hero-text h1 span {
+  color: #7b61ff;
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-btns .btn { margin-right: 1rem; }
+
+.hero-img img {
+  border-radius: 50%;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* --------- Buttons --------- */
+.btn {
+  display: inline-block;
+  padding: 0.7rem 1.2rem;
+  border-radius: 10px;
+  background: var(--accent);
+  color: white;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+
+.btn.ghost {
+  background: transparent;
+  border: 2px solid #7b61ff;
+  color: #7b61ff;
+}
+
+.btn.ghost:hover {
+  background: #7b61ff;
+  color: #fff;
+}
+
+/* --------- Cards --------- */
+.card {
+  background: var(--card);
+  padding: 2rem;
+  margin: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+}
+
+/* --------- Skills --------- */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(140px,1fr));
+  gap: 1rem;
+}
+
+.skill {
+  padding: 1rem;
+  border-radius: 12px;
+  background: #f3f4f6;
+  text-align: center;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.skill i {
+  font-size: 1.5rem;
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #7b61ff;
+}
+
+.skill:hover {
+  background: var(--accent);
+  color: white;
+  cursor: pointer;
+}
+
+.skill:hover i { color: #fff; }
+
+/* --------- Projects --------- */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+  gap: 1.5rem;
+}
+
+.project {
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: #f9fafc;
+  transition: 0.3s;
+}
+
+.project:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.project h3 {
+  margin-bottom: 0.5rem;
+  color: #7b61ff;
+}
+
+/* --------- Education --------- */
+#education {
+  padding: 2rem;
+}
+
+.education-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+  gap: 1.5rem;
+}
+
+.education-item {
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: #f9fafc;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.education-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.education-item h3 {
+  font-size: 1.25rem;
+  color: #7b61ff;
+  margin-bottom: 0.5rem;
+}
+
+.education-item p {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* --------- Certifications --------- */
+#certifications {
+  padding: 2rem;
+}
+
+.certifications-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  padding: 0;
+  margin: 0;
+}
+
+.certifications-list li {
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: #f9fafc;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+  transition: transform 0.3s, box-shadow 0.3s, color 0.3s;
+  font-size: 1rem;
+  color: #333;
+  font-weight: 500;
+  text-align: center;
+}
+
+.certifications-list li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  color: #7b61ff;
+}
+
+
+/* --------- Internships --------- */
+#internships {
+  padding: 2rem;
+}
+
+.internships-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.internship-item {
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: #f9fafc;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.internship-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.internship-item h3 {
+  font-size: 1.25rem;
+  color: #7b61ff;
+  margin-bottom: 0.5rem;
+}
+
+.internship-item p {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* --------- Contact --------- */
+.contact-form {
+  max-width: 600px;
+  margin: 2rem auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.form-group {
+  position: relative;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px solid #ddd;
+  border-radius: 12px;
+  font-size: 1rem;
+  background: #fff;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #7b61ff;
+  box-shadow: 0 0 8px rgba(123, 97, 255, 0.3);
+}
+
+.form-group label {
+  position: absolute;
+  left: 16px;
+  top: 14px;
+  color: #888;
+  font-size: 0.95rem;
+  pointer-events: none;
+  transition: 0.3s ease;
+}
+
+.contact-form input:focus + label,
+.contact-form input:not(:placeholder-shown) + label,
+.contact-form textarea:focus + label,
+.contact-form textarea:not(:placeholder-shown) + label {
+  top: -10px;
+  left: 12px;
+  font-size: 0.8rem;
+  color: #7b61ff;
+  background: #fff;
+  padding: 0 6px;
+  border-radius: 6px;
+}
+
+.contact-form textarea {
+  resize: none;
+  min-height: 120px;
+}
+
+.contact-form .btn {
+  border: none;
+  font-size: 1.05rem;
+  padding: 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
